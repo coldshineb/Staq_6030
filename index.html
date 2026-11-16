@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>智力方块 (Staq)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <img src="assets/icon.png" alt="icon" class="brand-logo">
+            <span class="brand-title">智力方块</span>
+        </div>
+        <div class="header-actions">
+            <button id="btnMute" class="ui-btn">🔊 声音</button>
+            <button id="btnRestart" class="ui-btn">🔄 新游戏</button>
+            <button id="btnHelp" class="ui-btn">❓ 操作</button>
+        </div>
+    </header>
+
+    <main class="app-layout">
+        <div class="game-container">
+            <div class="canvas-card">
+                <canvas id="gameCanvas" width="128" height="128" tabindex="0"></canvas>
+            </div>
+            <div class="shortcuts-bar">
+                <span class="shortcut-tag"><kbd>Space</kbd> / <kbd>5</kbd> 发射</span>
+                <span class="shortcut-tag"><kbd>↑</kbd><kbd>↓</kbd> / <kbd>2</kbd><kbd>8</kbd> 移动</span>
+                <span class="shortcut-tag"><kbd>←</kbd><kbd>→</kbd> / <kbd>4</kbd><kbd>6</kbd> 旋转</span>
+                <span class="shortcut-tag"><kbd>Esc</kbd> 菜单</span>
+            </div>
+        </div>
+
+        <div id="helpModal" class="modal-overlay">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h3>操作说明</h3>
+                    <button class="modal-close" id="btnCloseHelp">✕</button>
+                </div>
+                <div class="modal-body">
+                    <table class="control-table">
+                        <tr><td>发射 / 确定</td><td><kbd>Space</kbd> / <kbd>Enter</kbd> / <kbd>5</kbd></td></tr>
+                        <tr><td>上下移动</td><td><kbd>↑</kbd> <kbd>↓</kbd> / <kbd>W</kbd> <kbd>S</kbd> / <kbd>2</kbd> <kbd>8</kbd></td></tr>
+                        <tr><td>旋转方块</td><td><kbd>←</kbd> <kbd>→</kbd> / <kbd>A</kbd> <kbd>D</kbd> / <kbd>4</kbd> <kbd>6</kbd></td></tr>
+                        <tr><td>菜单 / 返回</td><td><kbd>Esc</kbd> / <kbd>F2</kbd></td></tr>
+                        <tr><td>静音</td><td><kbd>M</kbd></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>
